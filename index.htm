@@ -1,0 +1,225 @@
+<!-- Import minimalistického písma z Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+    /* --- ZÁKLADNÍ STYLY --- */
+    .tmavy-kontejner a {
+        color: #c7a17a;
+        text-decoration: none;
+        transition: color 0.4s ease, letter-spacing 0.4s ease;
+    }
+    .tmavy-kontejner h1, .tmavy-kontejner h2, .tmavy-kontejner h3 {
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    /* --- ANIMAČNÍ KEYFRAMES --- */
+    @keyframes fadeIn-up-header {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    @keyframes grow-line {
+        to { width: 80px; }
+    }
+
+    /* --- STYLY PRO KOMPONENTY --- */
+    .animace-nadpis {
+        animation: fadeIn-up-header 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+    .nuzky-ikona {
+        color: #c7a17a;
+        font-size: 1.2em;
+        vertical-align: middle;
+        display: inline-block;
+        animation: pulse 4s infinite ease-in-out;
+    }
+    .navigace a {
+        margin: 0 25px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding-bottom: 5px;
+        position: relative;
+    }
+    .navigace a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 50%;
+        background-color: #c7a17a;
+        transition: width 0.4s ease, left 0.4s ease;
+    }
+    .navigace a:hover::after {
+        width: 100%;
+        left: 0;
+    }
+    
+    .sekce {
+        padding: 90px 40px;
+        max-width: 1100px;
+        margin: auto;
+        text-align: center;
+        border-bottom: 1px solid rgba(199, 161, 122, 0.2);
+    }
+    .sekce:last-of-type { border-bottom: none; }
+    
+    .sekce h2 {
+        position: relative;
+        padding-bottom: 20px;
+        margin-bottom: 60px;
+        display: inline-block;
+    }
+    .sekce h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1px;
+        background-color: #c7a17a;
+        animation: grow-line 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+    }
+    
+    .karta-sluzby {
+        border-top: 2px solid #c7a17a;
+        padding-top: 25px;
+    }
+    
+    .tlacitko-mapa {
+        background-color: #c7a17a;
+        color: #121212;
+        padding: 15px 30px;
+        display: inline-block;
+        font-weight: 700;
+        letter-spacing: 1px;
+        border: 2px solid #c7a17a;
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .tlacitko-mapa:hover {
+        background-color: transparent;
+        color: #c7a17a;
+    }
+    
+    .footer {
+        background-color: #0a0a0a;
+        color: #aaa;
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 0.9em;
+        font-weight: 300;
+        border-top: 1px solid rgba(199, 161, 122, 0.2);
+    }
+
+    .animace-pri-scrollu {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .animace-pri-scrollu.je-viditelne {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<div class="tmavy-kontejner">
+
+    <header style="text-align: center; padding: 100px 20px;">
+        <div class="animace-nadpis">
+            <h1 style="font-size: 2.8em; margin: 0 0 10px 0;">ZUZANA ŠPAČKOVÁ</h1>
+            <p style="font-size: 1.2em; font-weight: 300; margin: 0; letter-spacing: 2px;">
+                <span class="nuzky-ikona">✂</span> KADEŘNICKÝ SALON <span class="nuzky-ikona" style="animation-delay: 2s;">✂</span>
+            </p>
+        </div>
+    </header>
+
+    <nav class="navigace" style="background-color: rgba(20, 20, 20, 0.8); backdrop-filter: blur(10px); text-align: center; padding: 20px; border-top: 1px solid rgba(199, 161, 122, 0.2); border-bottom: 1px solid rgba(199, 161, 122, 0.2); position: sticky; top: 0; z-index: 100;">
+        <a href="#sluzby">SLUŽBY</a>
+        <a href="#kontakt">KONTAKT</a>
+        <a href="#mapa">MAPA</a>
+    </nav>
+
+    <main>
+        <section id="sluzby" class="sekce animace-pri-scrollu">
+            <h2>NABÍDKA SLUŽEB</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 80px;">
+                <div class="karta-sluzby" style="flex-basis: 280px; text-align: center;">
+                    <h3 style="font-size: 1.4em; color: #c7a17a; margin-top: 0;">DÁMSKÉ SLUŽBY</h3>
+                    <p style="font-weight: 300;">Kompletní péče od střihu přes barvení až po finální styling pro každou příležitost.</p>
+                </div>
+                <div class="karta-sluzby" style="flex-basis: 280px; text-align: center;">
+                    <h3 style="font-size: 1.4em; color: #c7a17a; margin-top: 0;">PÁNSKÉ SLUŽBY</h3>
+                    <p style="font-weight: 300;">Precizní střihy pro moderního muže, včetně poradenství.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="sekce animace-pri-scrollu">
+            <h2>KONTAKT & OTEVÍRACÍ DOBA</h2>
+            <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 40px; text-align: center;">
+                <div style="flex-basis: 280px;">
+                    <h3 style="font-size: 1.4em; color: #c7a17a;">ADRESA</h3>
+                    <p style="font-weight: 300;">Na Sádkách 689/2<br>370 05 České Budějovice</p>
+                </div>
+                <div style="flex-basis: 280px;">
+                    <h3 style="font-size: 1.4em; color: #c7a17a;">KONTAKT</h3>
+                    <p style="font-weight: 300;">
+                        Telefon: <a href="tel:+420776792660">+420 776 792 660</a><br>
+                        E-mail: <a href="mailto:kadernicky.salon@centrum.cz">kadernicky.salon@centrum.cz</a>
+                    </p>
+                </div>
+                <div style="flex-basis: 280px;">
+                    <h3 style="font-size: 1.4em; color: #c7a17a;">OTEVÍRACÍ DOBA</h3>
+                    <p style="font-weight: 300;">
+                        Pondělí - Pátek: 9:00 - 16:00<br>
+                        Sobota - Neděle: Zavřeno
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mapa" class="sekce animace-pri-scrollu">
+            <h2>KDE NÁS NAJDETE</h2>
+            <p style="font-weight: 300; max-width: 500px; margin-left: auto; margin-right: auto; margin-top: -40px; margin-bottom: 40px;">Sídlíme v klidné části Českých Budějovic s dobrou dostupností a vlastním, prostorným parkovištěm.</p>
+            <a href="https://www.google.com/maps/place/Na+S%C3%A1dk%C3%A1ch+689%2F2,+370+05+%C4%8Cesk%C3%A9+Bud%C4%9Bjovice" target="_blank" rel="noopener noreferrer" class="tlacitko-mapa">
+                📍 ZOBRAZIT NA MAPĚ
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Zuzana Špačková | Všechna práva vyhrazena</p>
+    </footer>
+
+</div>
+
+<!-- JavaScript pro 'Aktivní Okna' -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('je-viditelne');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const elementsToAnimate = document.querySelectorAll('.animace-pri-scrollu');
+        elementsToAnimate.forEach(el => observer.observe(el));
+    });
+</script>
