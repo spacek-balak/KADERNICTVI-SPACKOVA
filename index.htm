@@ -6,7 +6,7 @@
     <title>Kadeřnický Salon | Zuzana Špačková</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
     <style>
         /* --- ZÁKLADNÍ STYLY --- */
         body {
@@ -37,14 +37,13 @@
             animation: fadeIn-up-header 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Vycentrování na střed */
+            align-items: center;
         }
         
-        /* Tenká linka mezi nápisy */
         .oddelovaci-linka {
-            width: 150px; /* Šířka linky */
+            width: 150px;
             height: 1px;
-            background-color: #c7a17a; /* Zlatá barva */
+            background-color: #c7a17a;
             margin: 20px 0;
             opacity: 0.6;
         }
@@ -90,7 +89,6 @@
             border-radius: 4px;
         }
         
-        /* TLAČÍTKO MAPY */
         .tlacitko-mapa {
             background-color: #c7a17a;
             color: #121212 !important;
@@ -152,7 +150,7 @@
             
             <div class="oddelovaci-linka"></div>
             
-            <p style="font-size: clamp(1.2em, 4vw, 2.2em); font-weight: 700; margin: 0; letter-spacing: 4px; text-transform: uppercase; color: #e0e0e0; opacity: 0.9;">
+            <p style="font-size: clamp(1.2em, 4vw, 2.2em); font-weight: 700; margin: 0; letter-spacing: 4px; text-transform: uppercase; color: #e0e0e0;">
                 ZUZANA ŠPAČKOVÁ
             </p>
         </div>
@@ -197,7 +195,7 @@
                     <h3 style="color: #c7a17a; font-weight: 800;">OTEVÍRACÍ DOBA</h3>
                     <p>
                         <strong>Pondělí - Pátek:</strong> 9:00 - 16:00<br>
-                        <strong>Sobota - Neděle:</strong> Na objednání
+                        <strong>Sobota - Neděle:</strong> <span style="color: #ff5555;">ZAVŘENO</span>
                     </p>
                 </div>
             </div>
@@ -206,9 +204,9 @@
         <section id="mapa" class="sekce animace-pri-scrollu">
             <h2>KDE NÁS NAJDETE</h2>
             <p style="max-width: 650px; margin: -30px auto 50px auto; font-size: 1.2em; font-weight: 700;">
-                Těšíme se na Vaši návštěvu v našem salonu v Českých Budějovicích.
+                Těšíme se na Vaši návštěvu v Českých Budějovicích.
             </p>
-            <a href="https://maps.google.com/?q=Na+Sádkách+Na+Zlaté+stoce+České+Budějovice" target="_blank" rel="noopener noreferrer" class="tlacitko-mapa">
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="tlacitko-mapa">
                 <svg class="map-icon" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
                 </svg>
@@ -225,19 +223,17 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const observerOptions = { threshold: 0.15 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('je-viditelne');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.15 });
         document.querySelectorAll('.animace-pri-scrollu').forEach(el => observer.observe(el));
     });
 </script>
 
 </body>
 </html>
-
 
