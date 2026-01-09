@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuzana Špačková | Kadeřnický Salon</title>
+    <title>Kadeřnický Salon | Zuzana Špačková</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
@@ -21,18 +21,8 @@
             text-decoration: none;
             transition: color 0.4s ease;
         }
-        .tmavy-kontejner h1 {
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin: 0;
-        }
-        .tmavy-kontejner h2 {
-            font-weight: 900;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
         p {
-            font-weight: 500; /* Zvýšená tučnost běžného textu */
+            font-weight: 500;
             line-height: 1.7;
         }
 
@@ -46,9 +36,6 @@
             50% { transform: scale(1.2); opacity: 1; }
             100% { transform: scale(1); opacity: 0.8; }
         }
-        @keyframes grow-line {
-            to { width: 100px; }
-        }
 
         /* --- STYLY PRO KOMPONENTY --- */
         .animace-nadpis {
@@ -57,7 +44,7 @@
         
         .diamant-ikona {
             color: #c7a17a;
-            font-size: 0.7em;
+            font-size: 0.6em;
             vertical-align: middle;
             display: inline-block;
             animation: sparkle 3s infinite ease-in-out;
@@ -79,18 +66,9 @@
             margin: 0 25px;
             font-weight: 900;
             letter-spacing: 1px;
-            padding-bottom: 5px;
-            position: relative;
             font-size: 1em;
+            text-transform: uppercase;
         }
-        .navigace a::after {
-            content: '';
-            position: absolute; width: 0; height: 3px;
-            bottom: 0; left: 50%;
-            background-color: #c7a17a;
-            transition: width 0.4s ease, left 0.4s ease;
-        }
-        .navigace a:hover::after { width: 100%; left: 0; }
         
         .sekce {
             padding: 100px 40px;
@@ -101,20 +79,12 @@
         }
         
         .sekce h2 {
-            position: relative;
-            padding-bottom: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 60px;
-            display: inline-block;
         }
-        .sekce h2::after {
-            content: '';
-            position: absolute; bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 0; height: 3px;
-            background-color: #c7a17a;
-            animation: grow-line 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
-        }
-        
+
         .karta-sluzby {
             border-top: 4px solid #c7a17a;
             background: rgba(255, 255, 255, 0.03);
@@ -122,10 +92,10 @@
             border-radius: 4px;
         }
         
-        /* OPRAVENÉ TLAČÍTKO MAPY */
+        /* TLAČÍTKO MAPY */
         .tlacitko-mapa {
             background-color: #c7a17a;
-            color: #121212 !important; /* Maximální kontrast pro čitelnost nápisu */
+            color: #121212 !important;
             padding: 20px 40px;
             display: inline-flex;
             align-items: center;
@@ -147,7 +117,6 @@
             fill: #121212;
             width: 28px;
             height: 28px;
-            transition: fill 0.4s ease;
         }
         .tlacitko-mapa:hover .map-icon {
             fill: #c7a17a;
@@ -158,7 +127,6 @@
             color: #aaa;
             text-align: center;
             padding: 50px 20px;
-            font-size: 0.95em;
             font-weight: 800;
             border-top: 1px solid rgba(199, 161, 122, 0.2);
         }
@@ -180,9 +148,11 @@
 
     <header style="text-align: center; padding: 140px 20px;">
         <div class="animace-nadpis">
-            <h1 style="font-size: clamp(2.5em, 8vw, 4.5em);">ZUZANA ŠPAČKOVÁ</h1>
-            <p style="font-size: clamp(1.4em, 5vw, 2.2em); font-weight: 900; margin-top: 20px; letter-spacing: 8px; color: #c7a17a; text-transform: uppercase;">
+            <h1 style="font-size: clamp(1.8em, 6vw, 3.5em); font-weight: 900; letter-spacing: 8px; color: #c7a17a; text-transform: uppercase; margin-bottom: 5px;">
                 <span class="diamant-ikona">◆</span> KADEŘNICKÝ SALON <span class="diamant-ikona" style="animation-delay: 1.5s;">◆</span>
+            </h1>
+            <p style="font-size: clamp(1.5em, 5vw, 2.8em); font-weight: 900; margin: 0; letter-spacing: 3px; text-transform: uppercase; color: #e0e0e0;">
+                ZUZANA ŠPAČKOVÁ
             </p>
         </div>
     </header>
@@ -198,32 +168,32 @@
             <h2>NABÍDKA SLUŽEB</h2>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
                 <div class="karta-sluzby" style="flex: 1; min-width: 280px; max-width: 400px;">
-                    <h3 style="font-size: 1.7em; color: #c7a17a; margin-top: 0;">DÁMSKÉ SLUŽBY</h3>
+                    <h3 style="font-size: 1.7em; color: #c7a17a; margin-top: 0; font-weight: 800;">DÁMSKÉ SLUŽBY</h3>
                     <p><strong>Kompletní péče</strong> od moderních střihů přes barvení až po slavnostní styling.</p>
                 </div>
                 <div class="karta-sluzby" style="flex: 1; min-width: 280px; max-width: 400px;">
-                    <h3 style="font-size: 1.7em; color: #c7a17a; margin-top: 0;">PÁNSKÉ SLUŽBY</h3>
-                    <p><strong>Precizní střihy</strong> a úprava vlasů pro muže, kteří dbají na detail.</p>
+                    <h3 style="font-size: 1.7em; color: #c7a17a; margin-top: 0; font-weight: 800;">PÁNSKÉ SLUŽBY</h3>
+                    <p><strong>Moderní střihy</strong> a úprava vlasů pro muže, kteří dbají na styl a detail.</p>
                 </div>
             </div>
         </section>
 
         <section id="kontakt" class="sekce animace-pri-scrollu">
-            <h2>KONTAKT & OTEVÍRACÍ DOBA</h2>
+            <h2>KONTAKT</h2>
             <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 60px;">
                 <div style="flex-basis: 280px;">
-                    <h3 style="color: #c7a17a;">ADRESA</h3>
+                    <h3 style="color: #c7a17a; font-weight: 800;">ADRESA</h3>
                     <p><strong>Křižovatka Na Sádkách / Na Zlaté stoce</strong><br>370 05 České Budějovice</p>
                 </div>
                 <div style="flex-basis: 280px;">
-                    <h3 style="color: #c7a17a;">REZERVACE</h3>
+                    <h3 style="color: #c7a17a; font-weight: 800;">REZERVACE</h3>
                     <p>
                         Telefon: <a href="tel:+420776792660" style="font-weight: 900; font-size: 1.2em;">+420 776 792 660</a><br>
                         Email: <a href="mailto:kadernicky.salon@centrum.cz" style="font-weight: 800;">kadernicky.salon@centrum.cz</a>
                     </p>
                 </div>
                 <div style="flex-basis: 280px;">
-                    <h3 style="color: #c7a17a;">OTEVÍRACÍ DOBA</h3>
+                    <h3 style="color: #c7a17a; font-weight: 800;">OTEVÍRACÍ DOBA</h3>
                     <p>
                         <strong>Pondělí - Pátek:</strong> 9:00 - 16:00<br>
                         <strong>Sobota - Neděle:</strong> Na objednání
@@ -235,9 +205,9 @@
         <section id="mapa" class="sekce animace-pri-scrollu">
             <h2>KDE NÁS NAJDETE</h2>
             <p style="max-width: 650px; margin: -30px auto 50px auto; font-size: 1.2em; font-weight: 700;">
-                Sídlíme v Českých Budějovicích na křižovatce ulic <strong>Na Sádkách</strong> a <strong>Na Zlaté stoce</strong>.
+                Najdete nás na strategickém místě v Českých Budějovicích.
             </p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Na+Sádkách+Na+Zlaté+stoce+České+Budějovice" target="_blank" rel="noopener noreferrer" class="tlacitko-mapa">
+            <a href="https://maps.google.com/?q=Na+Sádkách+Na+Zlaté+stoce+České+Budějovice" target="_blank" rel="noopener noreferrer" class="tlacitko-mapa">
                 <svg class="map-icon" viewBox="0 0 24 24">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
                 </svg>
@@ -268,4 +238,5 @@
 
 </body>
 </html>
+
 
