@@ -6,7 +6,7 @@
     <title>Kadeřnický Salon | Zuzana Špačková</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;700;800;900&display=swap" rel="stylesheet">
     <style>
         /* --- ZÁKLADNÍ STYLY --- */
         body {
@@ -28,27 +28,25 @@
 
         /* --- ANIMAČNÍ KEYFRAMES --- */
         @keyframes fadeIn-up-header {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes sparkle {
-            0% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(1); opacity: 0.8; }
         }
 
         /* --- STYLY PRO KOMPONENTY --- */
         .animace-nadpis {
             animation: fadeIn-up-header 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Vycentrování na střed */
         }
         
-        .diamant-ikona {
-            color: #c7a17a;
-            font-size: 0.6em;
-            vertical-align: middle;
-            display: inline-block;
-            animation: sparkle 3s infinite ease-in-out;
-            margin: 0 15px;
+        /* Tenká linka mezi nápisy */
+        .oddelovaci-linka {
+            width: 150px; /* Šířka linky */
+            height: 1px;
+            background-color: #c7a17a; /* Zlatá barva */
+            margin: 20px 0;
+            opacity: 0.6;
         }
 
         .navigace {
@@ -148,10 +146,13 @@
 
     <header style="text-align: center; padding: 140px 20px;">
         <div class="animace-nadpis">
-            <h1 style="font-size: clamp(1.8em, 6vw, 3.5em); font-weight: 900; letter-spacing: 8px; color: #c7a17a; text-transform: uppercase; margin-bottom: 5px;">
-                <span class="diamant-ikona">◆</span> KADEŘNICKÝ SALON <span class="diamant-ikona" style="animation-delay: 1.5s;">◆</span>
+            <h1 style="font-size: clamp(1.8em, 6vw, 3.5em); font-weight: 900; letter-spacing: 10px; color: #c7a17a; text-transform: uppercase; margin: 0;">
+                KADEŘNICKÝ SALON
             </h1>
-            <p style="font-size: clamp(1.5em, 5vw, 2.8em); font-weight: 900; margin: 0; letter-spacing: 3px; text-transform: uppercase; color: #e0e0e0;">
+            
+            <div class="oddelovaci-linka"></div>
+            
+            <p style="font-size: clamp(1.2em, 4vw, 2.2em); font-weight: 700; margin: 0; letter-spacing: 4px; text-transform: uppercase; color: #e0e0e0; opacity: 0.9;">
                 ZUZANA ŠPAČKOVÁ
             </p>
         </div>
@@ -205,7 +206,7 @@
         <section id="mapa" class="sekce animace-pri-scrollu">
             <h2>KDE NÁS NAJDETE</h2>
             <p style="max-width: 650px; margin: -30px auto 50px auto; font-size: 1.2em; font-weight: 700;">
-                Najdete nás na strategickém místě v Českých Budějovicích.
+                Těšíme se na Vaši návštěvu v našem salonu v Českých Budějovicích.
             </p>
             <a href="https://maps.google.com/?q=Na+Sádkách+Na+Zlaté+stoce+České+Budějovice" target="_blank" rel="noopener noreferrer" class="tlacitko-mapa">
                 <svg class="map-icon" viewBox="0 0 24 24">
